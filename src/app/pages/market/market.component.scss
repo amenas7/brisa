@@ -1,0 +1,234 @@
+.market-page {
+  min-height: 100vh;
+  background-color: #f9fafb;
+}
+
+.market-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 3rem 0 2rem;
+
+  h1 {
+    color: white !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-weight: 800;
+  }
+
+  p {
+    color: rgba(255, 255, 255, 0.95) !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    font-size: 1.1rem;
+  }
+
+  .form-control {
+    padding: 0.75rem 1rem;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.9);
+
+    &:focus {
+      border-color: white;
+      box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.25);
+      background: white;
+    }
+
+    &::placeholder {
+      color: #6b7280;
+    }
+  }
+
+  .btn {
+    padding: 0.75rem 1.5rem;
+  }
+
+  // Filters styling
+  .btn-sm {
+    &.btn-primary {
+      background-color: white;
+      color: #6366f1;
+      border-color: white;
+      font-weight: 600;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.9);
+        transform: translateY(-2px);
+      }
+    }
+
+    &.btn-outline-primary {
+      color: white;
+      border-color: rgba(255, 255, 255, 0.5);
+      font-weight: 500;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+        border-color: white;
+        color: white;
+      }
+    }
+  }
+}
+
+// Product Cards
+.invitation-card {
+  border: none;
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  }
+
+  .card-img-container {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+  }
+
+  .card-img-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    position: relative;
+
+    i {
+      opacity: 0.3;
+    }
+  }
+
+  .category-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: rgba(255, 255, 255, 0.95);
+    color: #6366f1;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .card-body {
+    padding: 1.5rem;
+  }
+
+  .card-title {
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 0.5rem;
+  }
+
+  .card-text {
+    font-size: 0.875rem;
+    line-height: 1.6;
+  }
+
+  .price {
+    .h4 {
+      color: #6366f1;
+    }
+  }
+
+  .rating {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    color: #4b5563;
+
+    i {
+      font-size: 1rem;
+    }
+  }
+
+  .features {
+    padding: 0.75rem;
+    background-color: #f3f4f6;
+    border-radius: 0.5rem;
+  }
+
+  .btn {
+    font-weight: 600;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    transition: all 0.2s ease;
+
+    &.btn-primary {
+      &:hover {
+        transform: scale(1.02);
+      }
+    }
+  }
+}
+
+// Filters
+.btn-sm {
+  font-weight: 500;
+  padding: 0.5rem 1.25rem;
+  border-radius: 2rem;
+  transition: all 0.2s ease;
+
+  &.btn-primary {
+    background-color: #6366f1;
+    border-color: #6366f1;
+  }
+
+  &.btn-outline-primary {
+    color: #6366f1;
+    border-color: #6366f1;
+
+    &:hover {
+      background-color: #6366f1;
+      color: white;
+    }
+  }
+}
+
+// Empty State
+.bi-inbox {
+  color: #d1d5db;
+}
+
+// Responsive
+@media (max-width: 991.98px) {
+  .market-header {
+    text-align: center;
+
+    .col-lg-4 {
+      margin-top: 1.5rem;
+    }
+  }
+
+  .invitation-card {
+    .card-img-container {
+      height: 200px;
+    }
+  }
+}
+
+@media (max-width: 767.98px) {
+  .invitation-card {
+    .card-img-container {
+      height: 180px;
+    }
+
+    .card-body {
+      padding: 1rem;
+    }
+  }
+
+  .d-flex.gap-2 {
+    flex-direction: column;
+    gap: 0.5rem !important;
+
+    .btn {
+      width: 100%;
+    }
+  }
+}
