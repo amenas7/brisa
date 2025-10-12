@@ -19,47 +19,47 @@ export class HomeComponent {
       description: 'Invitaciones elegantes para tu gran día'
     },
     {
+      name: '15 Años',
+      icon: 'stars',
+      description: 'Celebra esta ocasión especial con elegancia'
+    },
+    {
       name: 'Cumpleaños',
       icon: 'gift-fill',
       description: 'Celebra con estilo y creatividad'
-    },
-    {
-      name: 'Eventos Corporativos',
-      icon: 'briefcase-fill',
-      description: 'Profesionalismo en cada detalle'
     }
   ];
 
   pricingPlans = [
     {
       name: 'Básico',
-      price: '29',
+      price: '9.99',
       features: [
-        'Diseño personalizable',
-        'Hasta 50 invitados',
-        'Soporte por email',
-        '1 revisión'
+        'lorem ipsum dolor sit amet',
+        'lorem ipsum dolor sit amet',
+        'lorem ipsum dolor sit amet',
+        'lorem ipsum dolor sit amet'
       ]
     },
     {
       name: 'Premium',
-      price: '59',
+      price: '19.99',
       features: [
-        'Diseño personalizable',
-        'Invitados ilimitados',
-        'Soporte prioritario',
-        'Revisiones ilimitadas',
-        'Animaciones especiales'
+        'lorem ipsum dolor sit amet',
+        'lorem ipsum dolor sit amet',
+        'lorem ipsum dolor sit amet',
+        'lorem ipsum dolor sit amet',
+        'lorem ipsum dolor sit amet'
       ]
     },
     {
-      name: 'Empresarial',
-      price: '99',
+      name: 'Personalizado',
+      price: '39.99',
       features: [
-        'Todo de Premium',
-        'Diseño desde cero',
-        'Cuenta dedicada',
-        'Branding corporativo'
+        'lorem ipsum dolor sit amet',
+        'lorem ipsum dolor sit amet',
+        'lorem ipsum dolor sit amet',
+        'lorem ipsum dolor sit amet'
       ]
     }
   ];
