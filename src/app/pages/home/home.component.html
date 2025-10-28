@@ -15,9 +15,26 @@
       </div>
       <div class="col-lg-6">
         <div class="hero-image">
-          <div class="image-placeholder">
-            <i class="bi bi-card-image display-1"></i>
-          </div>
+          <img src="/assets/images/laptop.png" alt="Laptop" class="img-fluid">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Sección Características -->
+<section class="features-section py-5">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6 mb-4 mb-lg-0">
+        <h2 class="display-4 fw-bold mb-4"> Obtén la invitación de tus sueños </h2>
+        <p class="lead mb-4">
+          Creamos invitaciones digitales que capturan la esencia de tu día especial y dan comienzo a una experiencia única e inolvidable.
+        </p>
+      </div>
+      <div class="col-lg-6">
+        <div class="features-image">
+          <img src="assets/images/panel.png" alt="Características de invitaciones" class="img-fluid">
         </div>
       </div>
     </div>
@@ -61,6 +78,7 @@
       <div class="col-md-4" *ngFor="let plan of pricingPlans; let i = index">
         <div class="card pricing-card h-100"
              [class.featured]="selectedPlanIndex === i"
+             [class.premium-plan]="i === 1"
              (click)="selectPlan(i)"
              style="cursor: pointer;">
           <div class="card-body p-4">
@@ -84,6 +102,103 @@
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<app-testimonials-slider></app-testimonials-slider>
+
+<!-- Sección Preguntas Frecuentes -->
+<section id="faq" class="faq-section py-5">
+  <div class="container">
+    <div class="text-center mb-5">
+      <div class="title-with-icon">
+        <h2 class="display-4 fw-bold mb-3">
+          <i class="bi bi-question-circle-fill"></i>
+          Preguntas Frecuentes
+        </h2>
+      </div>
+      <p class="lead text-muted">Resolvemos tus dudas sobre nuestras invitaciones digitales</p>
+    </div>
+
+    <div class="accordion faq-accordion" id="faqAccordion">
+      <div class="accordion-item">
+        <h3 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+            <i class="bi bi-question-circle me-2"></i>
+            ¿Cómo funciona la entrega de las invitaciones?
+          </button>
+        </h3>
+        <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Una vez realizado el pago, recibirás tu invitación digital personalizada en formato web, optimizada para compartir fácilmente a través de WhatsApp, redes sociales o correo electrónico.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h3 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+            <i class="bi bi-question-circle me-2"></i>
+            ¿Las invitaciones son personalizables?
+          </button>
+        </h3>
+        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Sí, todas nuestras invitaciones son 100% personalizables. Puedes modificar textos, colores, imágenes y otros elementos para que coincidan perfectamente con tu evento.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h3 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+            <i class="bi bi-question-circle me-2"></i>
+            ¿Qué métodos de pago aceptan?
+          </button>
+        </h3>
+        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Aceptamos diversos métodos de pago incluyendo transferencias bancarias, Yape, Plin y depósitos directos para tu comodidad.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h3 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+            <i class="bi bi-question-circle me-2"></i>
+            ¿Cuánto tiempo estará disponible mi invitación?
+          </button>
+        </h3>
+        <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Tu invitación permanecerá activa durante 6 meses después de la fecha de tu evento. Si necesitas extender este período, contáctanos para discutir las opciones disponibles.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h3 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+            <i class="bi bi-question-circle me-2"></i>
+            ¿Puedo hacer cambios después de recibir mi invitación?
+          </button>
+        </h3>
+        <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Sí, ofrecemos un período de revisión y ajustes de 48 horas después de la entrega para realizar cambios menores sin costo adicional.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-5">
+      <p class="mb-4">¿Tienes más preguntas? ¡Contáctanos directamente!</p>
+      <a href="https://wa.me/51999999999" class="btn btn-primary btn-lg contact-btn">
+        <i class="bi bi-whatsapp me-2"></i>
+        Chatear con nosotros
+      </a>
     </div>
   </div>
 </section>

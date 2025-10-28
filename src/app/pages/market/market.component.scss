@@ -4,7 +4,7 @@
 }
 
 .market-header {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #6b8e6d 0%, #5a7d5f 100%);
   color: white;
   padding: 3rem 0 2rem;
 
@@ -44,7 +44,7 @@
   .btn-sm {
     &.btn-primary {
       background-color: white;
-      color: #6366f1;
+      color: #6b8e6d;
       border-color: white;
       font-weight: 600;
 
@@ -90,7 +90,7 @@
   .card-img-placeholder {
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #6b8e6d 0%, #5a7d5f 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -107,7 +107,7 @@
     top: 1rem;
     right: 1rem;
     background: rgba(255, 255, 255, 0.95);
-    color: #6366f1;
+    color: #6b8e6d;
     padding: 0.5rem 1rem;
     border-radius: 2rem;
     font-size: 0.875rem;
@@ -132,7 +132,7 @@
 
   .price {
     .h4 {
-      color: #6366f1;
+      color: #6b8e6d;
     }
   }
 
@@ -175,16 +175,16 @@
   transition: all 0.2s ease;
 
   &.btn-primary {
-    background-color: #6366f1;
-    border-color: #6366f1;
+    background-color: #6b8e6d;
+    border-color: #6b8e6d;
   }
 
   &.btn-outline-primary {
-    color: #6366f1;
-    border-color: #6366f1;
+    color: #6b8e6d;
+    border-color: #6b8e6d;
 
     &:hover {
-      background-color: #6366f1;
+      background-color: #6b8e6d;
       color: white;
     }
   }

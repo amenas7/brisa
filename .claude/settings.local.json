@@ -1,7 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "Bash(npm install:*)"
+      "Bash(npm install:*)",
+      "Bash(ng generate service:*)",
+      "Bash(ng generate component:*)"
     ],
     "deny": [],
     "ask": []

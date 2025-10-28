@@ -39,28 +39,28 @@
     transition: all 0.2s ease;
 
     &:hover {
-      color: #6366f1;
+      color: #6b8e6d;
       background-color: #f3f4f6;
     }
 
     &.active {
-      color: #6366f1;
-      background-color: #eef2ff;
+      color: #6b8e6d;
+      background-color: #eef5f0;
     }
 
     &.btn-primary {
       color: white !important;
-      background-color: #6366f1;
+      background-color: #6b8e6d;
       border: none;
 
       &:hover {
-        background-color: #4f46e5;
+        background-color: #5a7d5f;
         transform: translateY(-1px);
       }
     }
 
     &.active-route {
-      background-color: #4f46e5;
+      background-color: #5a7d5f;
     }
   }
 

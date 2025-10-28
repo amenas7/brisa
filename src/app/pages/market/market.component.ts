@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -20,7 +20,15 @@ interface Invitation {
   templateUrl: './market.component.html',
   styleUrl: './market.component.scss'
 })
-export class MarketComponent implements OnInit {
+export class MarketComponent implements OnInit, AfterViewInit {
+
+  constructor() {
+    // Forzar scroll al inicio inmediatamente al construir el componente
+    if (typeof window !== 'undefined') {
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+    }
+  }
   searchTerm: string = '';
   selectedCategory: string = 'all';
   categories: string[] = ['Bodas', 'Cumpleaños', 'XV Años', 'Baby Shower', 'Corporativo', 'Graduación'];
@@ -113,6 +121,14 @@ export class MarketComponent implements OnInit {
 
   ngOnInit() {
     this.filteredInvitations = this.invitations;
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+  }
+
+  ngAfterViewInit() {
+    // Asegurar que el scroll esté al inicio después de renderizar
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
   }
 
   filterByCategory(category: string) {

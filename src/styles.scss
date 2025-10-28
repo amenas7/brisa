@@ -1,6 +1,49 @@
 /* You can add global styles to this file, and also import other style files */
+
+// Variables de colores personalizados
+$primary: #6b8e6d;
+$primary-dark: #5a7d5f;
+
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-icons/font/bootstrap-icons.css';
+
+/* Sobrescribir colores de botones Bootstrap */
+.btn-primary {
+  background-color: #6b8e6d;
+  border-color: #6b8e6d;
+  color: white;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: #5a7d5f;
+    border-color: #5a7d5f;
+    color: white;
+  }
+
+  &:focus,
+  &:active:focus {
+    box-shadow: 0 0 0 0.2rem rgba(107, 142, 109, 0.5);
+  }
+}
+
+.btn-outline-primary {
+  color: #6b8e6d;
+  border-color: #6b8e6d;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: #6b8e6d;
+    border-color: #6b8e6d;
+    color: white;
+  }
+
+  &:focus,
+  &:active:focus {
+    box-shadow: 0 0 0 0.2rem rgba(107, 142, 109, 0.5);
+  }
+}
 
 /* Global Styles */
 body {
