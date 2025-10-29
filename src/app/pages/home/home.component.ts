@@ -2,15 +2,34 @@ import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { TestimonialsSliderComponent } from '../../shared/testimonials-slider/testimonials-slider.component';
+import { LottieComponent, AnimationOptions } from 'ngx-lottie';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [RouterLink, CommonModule, TestimonialsSliderComponent],
+  imports: [RouterLink, CommonModule, TestimonialsSliderComponent, LottieComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
+  lottieOptions: AnimationOptions = {
+    path: '/assets/images/choice.json',
+    loop: true,
+    autoplay: true
+  };
+
+  lottieOptionsSend: AnimationOptions = {
+    path: '/assets/images/send.json',
+    loop: true,
+    autoplay: true
+  };
+
+  lottieOptionsRocket: AnimationOptions = {
+    path: '/assets/images/rocket.json',
+    loop: true,
+    autoplay: true
+  };
+
   selectedPlanIndex: number = 1; // Premium por defecto
 
   categories = [

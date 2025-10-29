@@ -46,6 +46,12 @@ $primary-dark: #5a7d5f;
 }
 
 /* Global Styles */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+}
+
 body {
   padding-top: 76px;
 }
