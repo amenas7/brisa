@@ -12,6 +12,15 @@ import { LottieComponent, AnimationOptions } from 'ngx-lottie';
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
+
+  // Descuentos por tipo de plan (en porcentaje)
+  discounts = {
+    basico: 10,
+    premium: 10,
+    personalizada: 15
+  };
+
+
   lottieOptions: AnimationOptions = {
     path: '/assets/images/choice.json',
     loop: true,
@@ -53,38 +62,54 @@ export class HomeComponent {
   pricingPlans = [
     {
       name: 'Básico',
-      price: '9.99',
+      price: '49.99',
       features: [
-        'lorem ipsum dolor sit amet',
-        'lorem ipsum dolor sit amet',
-        'lorem ipsum dolor sit amet',
-        'lorem ipsum dolor sit amet'
+        'Diseño prestablecido',
+        'Personalización básica (texto y fotos)'
       ]
     },
     {
       name: 'Premium',
-      price: '19.99',
+      price: '79.99',
       features: [
-        'lorem ipsum dolor sit amet',
-        'lorem ipsum dolor sit amet',
-        'lorem ipsum dolor sit amet',
-        'lorem ipsum dolor sit amet',
-        'lorem ipsum dolor sit amet'
+        'Todos los beneficios del plan básico',
+        'Música de fondo personalizada',
+        'Galería de fotos',
+        'Sección de confirmación de asistencia con Google Sheets',
+        'Sección de mapa interactivo con Google Maps'
       ]
     },
     {
-      name: 'Personalizado',
-      price: '39.99',
+      name: 'Personalizada',
+      price: '119.99',
       features: [
-        'lorem ipsum dolor sit amet',
-        'lorem ipsum dolor sit amet',
-        'lorem ipsum dolor sit amet',
-        'lorem ipsum dolor sit amet'
+        'Todos los beneficios del plan premium',
+        'Diseño 100% a medida',
+        'Asesoría personalizada de diseño',
+        'Dominio o URL personalizada'
       ]
     }
   ];
 
   selectPlan(index: number): void {
     this.selectedPlanIndex = index;
+  }
+
+  // Obtiene el descuento para un plan específico
+  getDiscount(planName: string): number {
+    const key = planName.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    return (this.discounts as any)[key] || 0;
+  }
+
+  // Calcula el precio con descuento
+  getDiscountedPrice(originalPrice: string, planName: string): number {
+    const price = parseFloat(originalPrice);
+    const discount = this.getDiscount(planName);
+    return price - (price * discount / 100);
+  }
+
+  // Verifica si un plan tiene descuento
+  hasDiscount(planName: string): boolean {
+    return this.getDiscount(planName) > 0;
   }
 }

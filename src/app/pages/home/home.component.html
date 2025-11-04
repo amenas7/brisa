@@ -3,13 +3,13 @@
   <div class="container">
     <div class="row align-items-center py-4">
       <div class="col-lg-6 mb-4 mb-lg-0">
-        <h1 class="display-4 fw-bold mb-3">Invitaciones Virtuales que Enamoran</h1>
+        <h1 class="display-4 fw-bold mb-3">Invitaciones digitales que cuentan tu historia</h1>
         <p class="lead mb-4">
-          Crea momentos inolvidables con nuestras invitaciones digitales personalizadas.
-          Diseños únicos para tus eventos especiales.
+          Diseños únicos, animaciones encantadoras y una experiencia que tus invitados recordarán.
+          <b>Crea la tuya en minutos y compártela al instante.</b>
         </p>
         <div class="d-flex gap-3">
-          <a routerLink="/market" class="btn btn-light btn-lg hero-btn">Explorar catálogo</a>
+          <a routerLink="/market" class="btn btn-light btn-lg hero-btn">Explorar diseños</a>
           <!-- <a href="#contacto" class="btn btn-outline-light btn-lg">Contactar</a> -->
         </div>
       </div>
@@ -29,7 +29,7 @@
       <div class="col-lg-6 mb-4 mb-lg-0">
         <h2 class="display-4 fw-bold mb-4"> Obtén la invitación de tus sueños </h2>
         <p class="lead mb-4">
-          Creamos invitaciones digitales que capturan la esencia de tu día especial y dan comienzo a una experiencia única e inolvidable.
+          Creamos invitaciones digitales que reflejan tu estilo, con música, galería, animaciones y toda la información de tu evento en un solo enlace.
         </p>
       </div>
       <div class="col-lg-6">
@@ -45,7 +45,7 @@
 <section class="how-to-section py-5 bg-white">
   <div class="container">
     <div class="text-center mb-5">
-      <h2 class="display-4 fw-bold mb-3">¿Cómo obtenerla?</h2>
+      <h2 class="display-4 fw-bold mb-3">Tu invitación lista en 3 pasos</h2>
       <p class="lead text-primary fw-semibold">¡Fácil, rápido y seguro!</p>
     </div>
 
@@ -75,23 +75,23 @@
           <div class="step-card text-center">
             <div class="step-number">1</div>
             <h3 class="h4 fw-bold mb-3">Elige</h3>
-            <p class="text-muted">La invitación que más te guste y solicítala</p>
+            <p class="text-muted">tu diseño favorito</p>
           </div>
         </div>
 
         <div class="col-md-4">
           <div class="step-card text-center">
             <div class="step-number">2</div>
-            <h3 class="h4 fw-bold mb-3">Envíanos</h3>
-            <p class="text-muted">La información que te solicitemos</p>
+            <h3 class="h4 fw-bold mb-3">Personalízalo</h3>
+            <p class="text-muted">con tus datos, fotos y detalles</p>
           </div>
         </div>
 
         <div class="col-md-4">
           <div class="step-card text-center">
             <div class="step-number">3</div>
-            <h3 class="h4 fw-bold mb-3">Comparte</h3>
-            <p class="text-muted">La invitación con todos tus invitados</p>
+            <h3 class="h4 fw-bold mb-3">Compártelo</h3>
+            <p class="text-muted">por WhatsApp o redes sociales a tus invitados</p>
           </div>
         </div>
 
@@ -106,20 +106,23 @@
 <section id="diseños" class="designs-section py-5">
   <div class="container">
     <div class="text-center mb-5">
-      <h2 class="display-4 fw-bold mb-3">Nuestros Diseños</h2>
-      <p class="lead text-muted">Explora nuestra colección de invitaciones personalizables</p>
+      <h2 class="display-5 fw-bold mb-2">Nuestros Diseños</h2>
+      <p class="text-muted">Explora nuestra colección de invitaciones personalizables</p>
     </div>
 
     <div class="row g-4">
       <div class="col-md-4" *ngFor="let category of categories">
-        <div class="card category-card h-100">
-          <div class="card-body text-center">
-            <div class="category-icon mb-3">
-              <i class="bi bi-{{ category.icon }} display-4"></i>
+        <div class="category-card">
+          <div class="category-content">
+            <div class="category-icon-wrapper">
+              <i class="bi bi-{{ category.icon }}"></i>
             </div>
-            <h3 class="h5">{{ category.name }}</h3>
-            <p class="text-muted">{{ category.description }}</p>
-            <a routerLink="/market" class="btn btn-sm btn-outline-primary">Ver más</a>
+            <h3 class="category-title">{{ category.name }}</h3>
+            <p class="category-description">{{ category.description }}</p>
+            <a routerLink="/market" class="category-link">
+              Ver más
+              <i class="bi bi-arrow-right ms-1"></i>
+            </a>
           </div>
         </div>
       </div>
@@ -132,7 +135,7 @@
   <div class="container">
     <div class="text-center mb-5">
       <h2 class="display-4 fw-bold mb-3">Precios Accesibles</h2>
-      <p class="lead text-muted">Elige el plan perfecto para tu evento</p>
+      <p class="lead text-muted">Elige el tipo de diseño perfecto para tu evento</p>
     </div>
 
     <div class="row g-4 justify-content-center">
@@ -144,12 +147,31 @@
              style="cursor: pointer;">
           <div class="card-body p-4">
             <h3 class="h4 mb-3 text-center">{{ plan.name }}</h3>
-            <div class="price mb-4 text-center">
-              <span class="display-4 fw-bold">${{ plan.price }}</span>
+            
+            <!-- Badge de descuento -->
+            <div *ngIf="hasDiscount(plan.name)" class="text-center mb-2">
+              <span class="badge bg-danger discount-badge">
+                <i class="bi bi-tag-fill me-1"></i>
+                -{{ getDiscount(plan.name) }}% OFF
+              </span>
             </div>
+            
+            <div class="price mb-4 text-center">
+              <!-- Precio original tachado (si hay descuento) -->
+              <div *ngIf="hasDiscount(plan.name)" class="text-decoration-line-through text-muted fs-5 mb-1">
+                S/ {{ plan.price }}
+              </div>
+              
+              <!-- Precio con descuento o precio normal -->
+              <span class="display-4 fw-bold" 
+                    [class.text-success]="hasDiscount(plan.name)">
+                S/ {{ hasDiscount(plan.name) ? (getDiscountedPrice(plan.price, plan.name) | number:'1.2-2') : plan.price }}
+              </span>
+            </div>
+            
             <ul class="list-unstyled mb-4 text-start">
-              <li class="mb-3 d-flex align-items-start" *ngFor="let feature of plan.features">
-                <i class="bi bi-check-circle-fill text-success me-2 flex-shrink-0 mt-1"></i>
+              <li class="mb-3 d-flex align-items-center" *ngFor="let feature of plan.features">
+                <i class="bi bi-check-circle-fill text-success me-2 flex-shrink-0"></i>
                 <span>{{ feature }}</span>
               </li>
             </ul>
@@ -187,12 +209,12 @@
         <h3 class="accordion-header">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
             <i class="bi bi-question-circle me-2"></i>
-            ¿Cómo funciona la entrega de las invitaciones?
+            ¿Cómo recibo mi invitación?
           </button>
         </h3>
         <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
           <div class="accordion-body">
-            Una vez realizado el pago, recibirás tu invitación digital personalizada en formato web, optimizada para compartir fácilmente a través de WhatsApp, redes sociales o correo electrónico.
+            Una vez realizado el pago, te enviaremos un enlace personalizado para compartir por tus redes sociales.
           </div>
         </div>
       </div>
@@ -206,7 +228,7 @@
         </h3>
         <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
           <div class="accordion-body">
-            Sí, todas nuestras invitaciones son 100% personalizables. Puedes modificar textos, colores, imágenes y otros elementos para que coincidan perfectamente con tu evento.
+            Sí, según el tipo que elijas,todas nuestras invitaciones son 100% personalizables. Puedes modificar textos, colores, imágenes y otros elementos para que coincidan perfectamente con tu evento.
           </div>
         </div>
       </div>
@@ -234,7 +256,7 @@
         </h3>
         <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
           <div class="accordion-body">
-            Tu invitación permanecerá activa durante 6 meses después de la fecha de tu evento. Si necesitas extender este período, contáctanos para discutir las opciones disponibles.
+            Por 6 meses, con opción de extensión si lo deseas.
           </div>
         </div>
       </div>

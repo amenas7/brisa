@@ -31,7 +31,8 @@ export class MarketComponent implements OnInit, AfterViewInit {
   }
   searchTerm: string = '';
   selectedCategory: string = 'all';
-  categories: string[] = ['Bodas', 'Cumpleaños', 'XV Años', 'Baby Shower', 'Corporativo', 'Graduación'];
+  // categories: string[] = ['Bodas', 'Cumpleaños', 'XV Años', 'Baby Shower', 'Corporativo', 'Graduación'];
+  categories: string[] = ['Bodas', 'Cumpleaños', 'XV Años'];
 
   invitations: Invitation[] = [
     {
