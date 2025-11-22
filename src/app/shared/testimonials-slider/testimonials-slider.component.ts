@@ -3,11 +3,10 @@ import { CommonModule } from '@angular/common';
 import { Testimonial } from './testimonial.interface';
 
 @Component({
-  selector: 'app-testimonials-slider',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './testimonials-slider.component.html',
-  styleUrl: './testimonials-slider.component.scss'
+    selector: 'app-testimonials-slider',
+    imports: [CommonModule],
+    templateUrl: './testimonials-slider.component.html',
+    styleUrl: './testimonials-slider.component.scss'
 })
 export class TestimonialsSliderComponent implements OnInit, OnDestroy {
   private isDragging = false;

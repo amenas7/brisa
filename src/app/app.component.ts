@@ -8,11 +8,10 @@ import { LoadingService } from './shared/services/loading.service';
 import { filter } from 'rxjs/operators';
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet, NavbarComponent, LoadingComponent, FooterComponent, WhatsappComponent],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+    selector: 'app-root',
+    imports: [RouterOutlet, NavbarComponent, LoadingComponent, FooterComponent, WhatsappComponent],
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.scss'
 })
 export class AppComponent implements OnInit {
   title = 'brisa';

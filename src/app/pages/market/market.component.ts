@@ -14,11 +14,10 @@ interface Invitation {
 }
 
 @Component({
-  selector: 'app-market',
-  standalone: true,
-  imports: [CommonModule, FormsModule],
-  templateUrl: './market.component.html',
-  styleUrl: './market.component.scss'
+    selector: 'app-market',
+    imports: [CommonModule, FormsModule],
+    templateUrl: './market.component.html',
+    styleUrl: './market.component.scss'
 })
 export class MarketComponent implements OnInit, AfterViewInit {
 

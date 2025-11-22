@@ -5,11 +5,10 @@ import { TestimonialsSliderComponent } from '../../shared/testimonials-slider/te
 import { LottieComponent, AnimationOptions } from 'ngx-lottie';
 
 @Component({
-  selector: 'app-home',
-  standalone: true,
-  imports: [RouterLink, CommonModule, TestimonialsSliderComponent, LottieComponent],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+    selector: 'app-home',
+    imports: [RouterLink, CommonModule, TestimonialsSliderComponent, LottieComponent],
+    templateUrl: './home.component.html',
+    styleUrl: './home.component.scss'
 })
 export class HomeComponent {
 

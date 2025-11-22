@@ -1,11 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 
-// Variables de colores personalizados
-$primary: #6b8e6d;
-$primary-dark: #5a7d5f;
-
-@import 'bootstrap/scss/bootstrap';
+// Configurar Bootstrap con variables personalizadas
+@use 'bootstrap/scss/bootstrap' as * with (
+  $primary: #6b8e6d
+);
 @import 'bootstrap-icons/font/bootstrap-icons.css';
+
+// Variables adicionales
+$primary-dark: #5a7d5f;
 
 /* Sobrescribir colores de botones Bootstrap */
 .btn-primary {
